@@ -4,11 +4,15 @@
 
 ;;; Code:
 
-(install-pack 'php-mode)
+(install-packs '(php-mode
+                 smartscan))
 
 (add-to-list 'auto-mode-alist '("\\.module$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.install$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.engine$" . php-mode))
+
+(require 'smartscan)
+(add-hook 'php-mode-hook (lambda () (smartscan-mode)))
 
 ;;; php-pack.el ends here
