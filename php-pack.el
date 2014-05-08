@@ -4,6 +4,7 @@
 
 ;;; Code:
 
+(require 'install-packages-pack)
 (install-packs '(php-mode
                  smartscan))
 
@@ -15,4 +16,5 @@
 (require 'smartscan)
 (add-hook 'php-mode-hook (lambda () (smartscan-mode)))
 
+(provide 'php-pack)
 ;;; php-pack.el ends here
